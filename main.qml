@@ -1,5 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.2
 
 Window {
     id: window
@@ -13,6 +14,7 @@ Window {
         id: jake
         anchors.fill: parent
         source: "jake.gif"
+        paused: true
     }
 
     MouseArea {
@@ -57,5 +59,29 @@ Window {
             clock.text = hours + ":" + minutes + ":" + seconds
             window.title = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日"
         }
+    }
+
+    Row {
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.margins: 8
+        spacing: 8
+
+        Button {
+            id: thisButton
+            text: "按我！(・ω・)ノ"
+            onClicked: {
+                thisButton.text = "按噎（´ω`*）"
+            }
+        }
+
+        Button {
+            text: "按我！(・ω・)ノ"
+        }
+
+        Button {
+            text: "按我！(・ω・)ノ"
+        }
+
     }
 }
